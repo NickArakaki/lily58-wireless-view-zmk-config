@@ -16,22 +16,26 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            flavor = "balanced";
             hold-trigger-key-positions = <53 54 0 1 2 3 4 5 17 16 15 14 13 12 24 25 26 27 28 29 42 41 40 39 38 37 36 50 51 52 55 56 57>;
-            quick-tap-ms = <0>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-on-release;
         };
 
         LEFT_HOLD_TAP: LEFT_HOLD_TAP {
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_HOLD_TAP";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            flavor = "balanced";
             hold-trigger-key-positions = <53 54 50 51 52 55 56 57 6 7 8 9 10 11 23 22 21 20 19 18 30 43 44 31 45 32 46 33 47 34 48 35 49>;
             bindings = <&kp>, <&kp>;
 
-            quick-tap-ms = <0>;
+            quick-tap-ms = <175>;
+            hold-trigger-on-release;
+            require-prior-idle-ms = <150>;
         };
     };
 
