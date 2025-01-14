@@ -52,17 +52,17 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC           &kp N1                     &kp N2                     &kp N3                         &kp N4                       &kp N5                                  &kp N6             &kp N7                         &kp N8                           &kp N9                       &kp N0                               &kp BACKSPACE
-&kp TAB           &kp Q                      &kp W                      &kp E                          &kp R                        &kp T                                   &kp Y              &kp U                          &kp I                            &kp O                        &kp P                                &kp BACKSLASH
-&kp LEFT_CONTROL  &LEFT_HOLD_TAP LEFT_GUI A  &LEFT_HOLD_TAP LEFT_ALT S  &LEFT_HOLD_TAP LEFT_CONTROL D  &LEFT_HOLD_TAP LEFT_SHIFT F  &kp G                                   &kp H              &RIGHT_HOLD_TAP RIGHT_SHIFT J  &RIGHT_HOLD_TAP RIGHT_CONTROL K  &RIGHT_HOLD_TAP RIGHT_ALT L  &RIGHT_HOLD_TAP RIGHT_GUI SEMICOLON  &kp SQT
-&kp LSHFT         &kp Z                      &kp X                      &kp C                          &kp V                        &kp B         &kp LBKT     &kp RBKT     &kp N              &kp M                          &kp COMMA                        &kp DOT                      &kp FSLH                             &kp RSHFT
-                                                                        &kp LEFT_CONTROL               &kp LGUI                     &kp LEFT_ALT  &kp SPACE    &lt 2 SPACE  &kp RIGHT_CONTROL  &kp RGUI                       &kp RIGHT_ALT
+&kp ESC           &kp N1                     &kp N2                     &kp N3                         &kp N4                       &kp N5                                    &kp N6             &kp N7                         &kp N8                           &kp N9                       &kp N0                               &kp BACKSPACE
+&kp TAB           &kp Q                      &kp W                      &kp E                          &kp R                        &kp T                                     &kp Y              &kp U                          &kp I                            &kp O                        &kp P                                &kp BACKSLASH
+&kp LEFT_CONTROL  &LEFT_HOLD_TAP LEFT_GUI A  &LEFT_HOLD_TAP LEFT_ALT S  &LEFT_HOLD_TAP LEFT_CONTROL D  &LEFT_HOLD_TAP LEFT_SHIFT F  &kp G                                     &kp H              &RIGHT_HOLD_TAP RIGHT_SHIFT J  &RIGHT_HOLD_TAP RIGHT_CONTROL K  &RIGHT_HOLD_TAP RIGHT_ALT L  &RIGHT_HOLD_TAP RIGHT_GUI SEMICOLON  &kp SQT
+&kp LSHFT         &kp Z                      &kp X                      &kp C                          &kp V                        &kp B         &kp LBKT       &kp RBKT     &kp N              &kp M                          &kp COMMA                        &kp DOT                      &kp FSLH                             &kp RSHFT
+                                                                        &kp LEFT_CONTROL               &kp LGUI                     &kp LEFT_ALT  &lt 1 ENTER    &lt 2 SPACE  &kp RIGHT_CONTROL  &kp RGUI                       &kp RIGHT_ALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        lower_layer {
+        symbols {
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
             // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
@@ -70,19 +70,20 @@
             // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            display-name = "Lower";
+            display-name = "Sym";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans    &trans     &trans     &trans         &trans            &trans
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                          &kp F7    &kp F8     &kp F9     &kp F10        &kp F11           &kp F12
-&kp GRAVE   &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                       &kp PIPE  &kp AMPS   &kp EQUAL  &kp LPAR       &kp RPAR          &kp TILDE
-&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans    &kp MINUS  &kp PLUS   &kp LESS_THAN  &kp GREATER_THAN  &kp CARET
-                                        &trans        &trans        &trans        &trans    &trans  &trans    &trans     &trans
+&bt BT_CLR  &bt BT_SEL 0     &bt BT_SEL 1   &bt BT_SEL 2      &bt BT_SEL 3       &bt BT_SEL 4                    &trans         &trans        &trans                &trans                 &trans  &trans
+&trans      &kp SQT          &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp PERIOD                      &kp AMPS       &kp QUESTION  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans
+&trans      &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp KP_EQUAL       &kp HASH                        &kp PIPE       &kp COLON     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
+&trans      &kp CARET        &kp KP_DIVIDE  &kp ASTRK         &kp BACKSLASH      &trans        &trans    &trans  &kp LS(GRAVE)  &kp DOLLAR    &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &trans
+                                            &to 3             &trans             &trans        &trans    &trans  &trans         &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            label = "Sym";
         };
 
-        raise_layer {
+        navigation {
             // ------------------------------------------------------------------------------------------------------------
             // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
@@ -90,16 +91,29 @@
             // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            display-name = "Raise";
+            display-name = "Navigation";
             bindings = <
-&trans     &trans  &trans  &trans   &trans   &trans                     &trans       &trans     &trans     &trans    &trans     &trans
-&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp N6       &kp N7     &kp N8     &kp N9    &kp N0     &trans
-&kp F1     &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &trans       &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
-&kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
-                           &trans   &trans   &trans   &trans    &trans  &trans       &trans     &trans
+&trans  &trans  &trans  &trans   &trans   &trans                     &trans    &trans     &trans     &trans     &trans     &trans
+&trans  &trans  &trans  &trans   &trans   &trans                     &trans    &trans     &trans     &trans     &trans     &trans
+&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &kp CAPS  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
+&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &kp PLUS  &kp MINUS  &kp EQUAL  &kp PG_UP  &kp END    &trans
+                        &trans   &trans   &trans   &trans    &trans  &trans    &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            label = "Nav";
+        };
+
+        gaming {
+            bindings = <
+&kp ESC    &kp N1  &kp N2  &kp N3     &kp N4    &kp N5                            &kp N6     &kp N7    &kp N8     &kp N9   &kp N0    &kp BSPC
+&kp TAB    &kp Q   &kp W   &kp E      &kp R     &kp T                             &kp Y      &kp U     &kp I      &kp O    &kp P     &kp BSLH
+&kp LCTRL  &kp A   &kp S   &kp D      &kp F     &kp G                             &kp H      &kp J     &kp K      &kp L    &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z   &kp X   &kp C      &kp V     &kp B     &kp N        &kp M      &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &to 0
+                           &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE    &kp ENTER  &kp RCTRL  &kp RGUI  &kp RALT
+            >;
+
+            label = "Game";
         };
     };
 };
